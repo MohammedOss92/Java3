@@ -1,0 +1,24 @@
+# جدول الحقيقة (Truth Table) للعمليات المنطقية في البرمجة
+
+# 1. عملية AND (التقاطع - يجب أن تكون القيمتان True ليكون الناتج True)
+print("--- AND Table ---")
+print(True  and True)   # True
+print(True  and False)  # False
+print(False and True)   # False
+print(False and False)  # False
+
+print("\n" + "="*20 + "\n")
+
+# 2. عملية OR (الجمع - يكفي وجود True واحدة ليكون الناتج True)
+print("--- OR Table ---")
+print(True  or True)    # True
+print(True  or False)   # True
+print(False or True)    # True
+print(False or False)   # False
+
+print("\n" + "="*20 + "\n")
+
+# 3. عملية NOT (النفخ/العكس - تعكس القيمة الحالية)
+print("--- NOT Table ---")
+print(not True)         # False
+print(not False)        # True
