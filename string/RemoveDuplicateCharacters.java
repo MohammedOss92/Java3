@@ -1,4 +1,5 @@
-package string.strings;
+package string;
+
 
 public class RemoveDuplicateCharacters {
     public static void main(String[] args) {

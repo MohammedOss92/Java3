@@ -25,5 +25,26 @@ public class Array8{
         } else {
             System.out.println("المصفوفة ليست Palindrome");
         }
+
+
+
+
+
+
+// boolean isPalindrome = true;
+// int[] numbers = {10, 20, 30, 20, 10};
+
+// // وضعنا مؤشرين داخل الـ for (left و right)
+// for (int left = 0, right = numbers.length - 1; left < right; left++, right--) {
+//     if (numbers[left] != numbers[right]) {
+//         isPalindrome = false;
+//         break;
+//     }
+// }
+
     }
 }
+
+// حلقة while تعتمد على الشرط فقط.
+
+// أما حلقة for فتعتمد على (البداية + الشرط + طريقة التحديث)

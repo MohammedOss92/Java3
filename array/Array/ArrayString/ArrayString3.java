@@ -1,3 +1,4 @@
+package ArrayString;
 public class ArrayString3 {
 
     public static void main(String[] args) {

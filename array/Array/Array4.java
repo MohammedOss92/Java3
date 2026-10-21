@@ -5,8 +5,8 @@ public class Array4{
 
 int[] numbers = {10, 25, 30, 15, 40};
 
-Int max=10
-for(i=0;i<numbers.length;i++)
+int min=10;
+for(int i=0;i<numbers.length;i++)
 
 if (numbers[i] < min)
     min = numbers[i];

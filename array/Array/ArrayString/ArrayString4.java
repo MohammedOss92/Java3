@@ -1,3 +1,4 @@
+package ArrayString;
 public class ArrayString4 {
 
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class ArrayString4 {
     }
 }
 
-***package ArrayString;
+
 
 /**
  * 
@@ -24,7 +25,3 @@ public class ArrayString4 {
 أول حرف من أول عنصر words[0].charAt(0)
 آخر حرف من آخر عنصر words[words.length - 1] ثم charAt()
  */
-public class  {
-
-	
-}

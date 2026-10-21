@@ -1,3 +1,4 @@
+package Int;
 public class Prime2{
     public static void main(String[] args) {
         int limit = 50;

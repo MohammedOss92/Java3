@@ -1,3 +1,4 @@
+package string;
 
 public class FirstRepeatedCharacter {
      public static void main(String[] args) {

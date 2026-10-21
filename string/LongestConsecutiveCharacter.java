@@ -1,3 +1,5 @@
+package string;
+
 public class LongestConsecutiveCharacter{
 
     public static void main(String[] args) {

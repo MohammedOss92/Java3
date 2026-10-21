@@ -7,20 +7,44 @@ int[] numbers = {0, 5, 0,1,1,1, 3, 8, 0, 2};
 
 int count = 0;
 
+
+
+// نقل جميع الأرقام التي لا تساوي 1 إلى بداية المصفوفة بالترتيب، بينما يتجاهل رقم 1 مؤقتاً.
 for (int i = 0; i < numbers.length; i++) {
 
     if (numbers[i] != 1) {
         numbers[count] = numbers[i];
         count++;
+        System.out.println(count);
     }
 }
 
+// يبدأ من: الموقع رقم 7 (numbers[7]) وليس 6.
+
+// وينتهي عند: الموقع رقم 9 (آخر موقع في المصفوفة).
+// ملء الأماكن الفارغة (أو المتبقية) في نهاية المصفوفة برقم 1.
+// لأن المواقع من 0 إلى 6 أصبحت ممتلئة
 for (int j = count; j < numbers.length; j++) {
     numbers[j] = 1;
 }
 
 for (int i = 0; i < numbers.length; i++) {
     System.out.println(numbers[i]);
+}
+
+    System.out.println("/////////////////");
+
+    //طباعة الأرقام الحقيقية والصالحة فقط (أي العناصر التي تم نقلها وترتيبها في بداية المصفوفة وتجاهل الأرقام المستهدفة).
+for (int i = 0; i < count; i++) {
+    System.out.println(numbers[i]);
+}
+
+
+    System.out.println("/////////////////");
+
+// طباعة الأماكن المتبقية التي تم حشوها برقم 1
+for (int j = count; j < numbers.length; j++) {
+    System.out.println(numbers[j]);
 }
 }}
 

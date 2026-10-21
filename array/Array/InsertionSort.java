@@ -1,28 +1,26 @@
-
 public class InsertionSort{
 
     public static void main(String args[]){
 
-  int []nums={3,5,1,4,2,9};
-for (int i = 1; i < nums.length; i++) {
-
-    int key = nums[i];
-    int j = i - 1;
-
-    while (j >= 0 && nums[j] > key) {
-        nums[j + 1] = nums[j];
-        j--;
+        int []nums = {3, 5, 1, 4, 2, 9};
         
-    }
+        for (int i = 1; i < nums.length; i++) {
+            int key = nums[i];
+            int j = i - 1;
 
-    nums[j + 1] = key;
-}
+            while (j >= 0 && nums[j] > key) {
+                nums[j + 1] = nums[j];
+                j--;
+            }
 
-// الطباعة هنا
-for (int i = 0; i < nums.length; i++) {
-    System.out.print(nums[i] + " ");
-}
+            nums[j + 1] = key;
+        }
 
+        // الطباعة هنا
+        System.out.print("Sorted array: ");
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
+        }
     }
 }
 
@@ -122,4 +120,4 @@ Code template:
 ================================================================================
 
  * */
- */
+ 

@@ -24,9 +24,23 @@ public class Array12{
                 count++;
             }
         }
+        int[] greaterNumbers = new int[count];
+
+        // 5. تخزين القيم في المصفوفة الجديدة
+        int index = 0; // مؤشر لتعبئة المصفوفة الجديدة بالترتيب
+        int k = 0;
+        for (k = 0; k < numbers.length; k++) {
+            if (numbers[k] > avg) {
+                greaterNumbers[index] = numbers[k]; // تخزين الرقم
+                index++; // الانتقال للمكان التالي في المصفوفة الجديدة
+            }
+        }
 
         System.out.println("Average = " + avg);
         System.out.println("Count = " + count);
+        for (k = 0; k < greaterNumbers.length; k++) {
+        System.out.println( + greaterNumbers[k]);
+}
     }
 }
 

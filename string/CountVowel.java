@@ -1,3 +1,4 @@
+package string;
 
 public class CountVowel {
    public static void main(String[] args) {

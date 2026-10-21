@@ -1,3 +1,4 @@
+package Int;
 import java.util.Scanner;
 
 public class PrimeFactorization {
