@@ -4,7 +4,7 @@ public class TwoPointer2 {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
         int[] numbers = {2, 4, 6, 8, 10};
-int target = 60;
+int target =14;
 boolean found = false;
 int left = 0;
 int right = numbers.length - 1;
@@ -40,6 +40,6 @@ int right = numbers.length - 1;
 5. التحقق هل الكلمة متناظرة — Palindrome
 مثل كلمة تُقرأ بالطريقة نفسها من اليمين واليسار.
 6. إيجاد زوج مجموعه أقرب إلى هدف
-مسألة أصعب قليلًا تعتمد على فهم حركة
+مسألة أصعب قليلًا تعتمد على فهم حركة٠
  * */
  
