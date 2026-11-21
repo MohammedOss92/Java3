@@ -1,0 +1,14 @@
+
+fun main() {
+
+    // إنشاء مصفوفة من 3 عناصر
+    val numbers = arrayOf(10, 20, 30)
+
+    // تعديل العنصر الأول
+    numbers[0] = 100
+
+    // طباعة المصفوفة
+    println(numbers.contentToString())
+
+    // لا يمكن استخدام add أو remove مباشرة
+}

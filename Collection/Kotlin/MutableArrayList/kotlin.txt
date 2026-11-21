@@ -1,0 +1,260 @@
+سنبدأ بجميع أنواع Array و ArrayList في Kotlin من الصفر إلى المستوى الذي تحتاجه في حل مسائل الخوارزميات والمقابلات.
+
+سأرتبها لك حسب الموضوع، مع الدوال (Functions) والأمثلة. وسنطبق عملياً خطوة بخطوة.
+
+### 1\. Array في Kotlin
+
+المصفوفة ذات الحجم الثابت.
+
+```kotlin
+fun main() {
+
+    // إنشاء مصفوفة أعداد صحيحة
+    val numbers = arrayOf(10, 20, 30, 40)
+
+    // الوصول إلى العناصر
+    println(numbers[0])
+
+    // تعديل عنصر
+    numbers[0] = 100
+
+    // عدد العناصر
+    println(numbers.size)
+
+    // المرور على العناصر
+    for (num in numbers) {
+        println(num)
+    }
+}
+```
+
+### أنواع إنشاء Array
+
+| النوع            | الاستخدام    |
+| ---------------- | ------------ |
+| arrayOf()        | مصفوفة عامة  |
+| intArrayOf()     | أعداد صحيحة  |
+| doubleArrayOf()  | أعداد عشرية  |
+| floatArrayOf()   | Float        |
+| longArrayOf()    | Long         |
+| booleanArrayOf() | Boolean      |
+| charArrayOf()    | Char         |
+| byteArrayOf()    | Byte         |
+| shortArrayOf()   | Short        |
+| emptyArray()     | مصفوفة فارغة |
+
+مثال:
+
+```kotlin
+val a = intArrayOf(10, 20, 30)
+val b = doubleArrayOf(1.5, 2.5)
+val c = booleanArrayOf(true, false)
+val d = charArrayOf('A', 'B', 'C')
+val e = arrayOf("Ali", "Omar", "Ahmad")
+```
+
+### 2\. جميع خصائص ودوال Array
+
+| الدالة أو الخاصية  | الاستخدام                   |
+| ------------------ | --------------------------- |
+| size               | عدد العناصر                 |
+| get(index)         | جلب عنصر                    |
+| set(index, value)  | تعديل عنصر                  |
+| [index]            | الوصول إلى عنصر             |
+| indices            | جميع الفهارس                |
+| lastIndex          | آخر فهرس                    |
+| first()            | أول عنصر                    |
+| last()             | آخر عنصر                    |
+| isEmpty()          | هل فارغة؟                   |
+| isNotEmpty()       | هل غير فارغة؟               |
+| contains(x)        | هل تحتوي على عنصر؟          |
+| indexOf(x)         | فهرس العنصر                 |
+| lastIndexOf(x)     | آخر ظهور للعنصر             |
+| count()            | عدد العناصر                 |
+| forEach {}         | المرور على العناصر          |
+| forEachIndexed {}  | المرور مع الفهرس            |
+| filter {}          | تصفية العناصر               |
+| map {}             | تحويل العناصر               |
+| sorted()           | ترتيب تصاعدي                |
+| sortedDescending() | ترتيب تنازلي                |
+| reversed()         | عكس الترتيب                 |
+| distinct()         | حذف التكرار                 |
+| minOrNull()        | أصغر عنصر                   |
+| maxOrNull()        | أكبر عنصر                   |
+| sum()              | المجموع                     |
+| average()          | المتوسط                     |
+| any {}             | هل يوجد عنصر يحقق الشرط؟    |
+| all {}             | هل جميع العناصر تحقق الشرط؟ |
+| none {}            | هل لا يوجد عنصر يحقق الشرط؟ |
+| find {}            | أول عنصر يحقق الشرط         |
+| toList()           | تحويل إلى List              |
+| toMutableList()    | تحويل إلى MutableList       |
+| copyOf()           | نسخ المصفوفة                |
+| copyOfRange()      | نسخ جزء من المصفوفة         |
+| slice()            | استخراج جزء                 |
+| joinToString()     | تحويل العناصر إلى نص        |
+
+### 3\. ArrayList في Kotlin
+
+تسمح بإضافة وحذف العناصر وتغيير حجم القائمة.
+
+```kotlin
+fun main() {
+
+    val numbers = ArrayList<Int>()
+
+    numbers.add(10)
+    numbers.add(20)
+    numbers.add(30)
+
+    println(numbers)
+}
+```
+
+ويمكن كتابتها أيضاً:
+
+```kotlin
+val numbers = arrayListOf(10, 20, 30)
+```
+
+### 4\. جميع دوال ArrayList
+
+هذه أهم الدوال التي تحتاج إلى معرفتها:
+
+| الدالة                  | الاستخدام                       |
+| ----------------------- | ------------------------------- |
+| add(value)              | إضافة عنصر                      |
+| add(index, value)       | إضافة بموقع محدد                |
+| addAll(collection)      | إضافة مجموعة                    |
+| get(index)              | جلب عنصر                        |
+| set(index, value)       | تعديل عنصر                      |
+| remove(value)           | حذف عنصر بالقيمة                |
+| removeAt(index)         | حذف حسب الفهرس                  |
+| removeAll(collection)   | حذف مجموعة عناصر                |
+| retainAll(collection)   | الاحتفاظ بالعناصر المشتركة      |
+| clear()                 | حذف جميع العناصر                |
+| size                    | عدد العناصر                     |
+| isEmpty()               | هل فارغة؟                       |
+| isNotEmpty()            | هل غير فارغة؟                   |
+| contains(value)         | البحث عن عنصر                   |
+| containsAll(collection) | البحث عن مجموعة                 |
+| indexOf(value)          | أول فهرس                        |
+| lastIndexOf(value)      | آخر فهرس                        |
+| first()                 | أول عنصر                        |
+| last()                  | آخر عنصر                        |
+| firstOrNull()           | أول عنصر أو null                |
+| lastOrNull()            | آخر عنصر أو null                |
+| subList(from, to)       | استخراج جزء                     |
+| sort()                  | ترتيب تصاعدي                    |
+| sortDescending()        | ترتيب تنازلي                    |
+| reverse()               | عكس القائمة                     |
+| shuffle()               | ترتيب عشوائي                    |
+| distinct()              | إزالة التكرار وإرجاع قائمة      |
+| toList()                | تحويل إلى List                  |
+| toMutableList()         | إنشاء MutableList               |
+| forEach {}              | المرور على العناصر              |
+| filter {}               | تصفية                           |
+| map {}                  | تحويل                           |
+| sorted()                | ترتيب وإرجاع قائمة جديدة        |
+| sortedDescending()      | ترتيب تنازلي وإرجاع قائمة جديدة |
+| sum()                   | مجموع                           |
+| average()               | متوسط                           |
+| minOrNull()             | أصغر عنصر                       |
+| maxOrNull()             | أكبر عنصر                       |
+
+ملاحظة: بعض هذه الدوال تأتي من مكتبة Kotlin القياسية وتعمل على ArrayList لأنها تطبق واجهة List أو MutableList.
+
+### 5\. أنواع List في Kotlin
+
+| النوع           | قابل للتعديل؟ |
+| --------------- | ------------- |
+| List            | لا            |
+| MutableList     | نعم           |
+| ArrayList       | نعم           |
+| arrayListOf()   | نعم           |
+| listOf()        | لا            |
+| mutableListOf() | نعم           |
+
+مثال:
+
+```kotlin
+val a: List<Int> = listOf(10, 20, 30)
+
+val b: MutableList<Int> = mutableListOf(10, 20, 30)
+
+val c: ArrayList<Int> = arrayListOf(10, 20, 30)
+```
+
+### 6\. الفرق بين Array و ArrayList
+
+| المقارنة       | Array     | ArrayList |
+| -------------- | --------- | --------- |
+| الحجم          | ثابت      | متغير     |
+| إضافة عنصر     | لا مباشرة | نعم       |
+| حذف عنصر       | لا مباشرة | نعم       |
+| تعديل عنصر     | نعم       | نعم       |
+| الوصول بالفهرس | نعم       | نعم       |
+| التكرار        | ممكن      | ممكن      |
+| الاستخدام      | حجم معروف | حجم متغير |
+
+### 7\. أهم العمليات التي يجب أن تتدرب عليها
+
+هذه ليست مجرد دوال؛ بل مسائل مهمة في الخوارزميات:
+
+* طباعة جميع العناصر.
+
+* إيجاد أكبر وأصغر عنصر.
+
+* حساب المجموع والمتوسط.
+
+* عكس المصفوفة.
+
+* البحث الخطي Linear Search.
+
+* البحث الثنائي Binary Search.
+
+* حذف التكرارات.
+
+* عد تكرار كل عنصر.
+
+* إيجاد العنصر الثاني الأكبر.
+
+* دمج مصفوفتين.
+
+* ترتيب تصاعدي وتنازلي.
+
+* نقل الأصفار إلى النهاية.
+
+* إيجاد العناصر المشتركة.
+
+* إيجاد العناصر غير المشتركة.
+
+* تدوير المصفوفة يميناً ويساراً.
+
+### خطة تعلمنا العملية
+
+بما أنك تتعلم Java وKotlin وPython، سنركز على فهم الفكرة ثم تطبيقها بلغاتك الثلاث، دون إعادة شرح الخوارزمية نفسها ثلاث مرات.
+
+* Array
+
+    الإنشاء، الوصول، التعديل، المرور، جميع الدوال.
+
+    نبدأ هنا
+
+* ArrayList / MutableList
+
+    الإضافة، الحذف، التعديل، البحث، الترتيب.
+
+* List و MutableList
+
+    الفرق بينهما ومتى تستخدم كل واحدة.
+
+* عمليات Collections
+
+    filter و map و sorted و distinct وغيرها.
+
+* مشاريع تطبيقية
+
+    إدارة درجات الطلاب، قائمة مهام، وإدارة المنتجات.
+
+نبدأ بـ Array في Kotlin أولاً. لن أنتقل إلى ArrayList حتى تفهم Array وتطبق عليها بنفسك.
