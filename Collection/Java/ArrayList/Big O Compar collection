@@ -1,0 +1,36 @@
+Java ArrayList:
+Access       = O(1)
+Search       = O(n)
+Add Last     = O(1) Amortized
+Add First    = O(n)
+Remove First = O(n)
+Space        = O(n)
+
+
+Kotlin ArrayList:
+Access       = O(1)
+Search       = O(n)
+Add Last     = O(1) Amortized
+Add First    = O(n)
+Remove First = O(n)
+Space        = O(n)
+
+
+Kotlin ArrayDeque:
+Access       = O(1)
+Search       = O(n)
+Add First    = O(1) Amortized
+Add Last     = O(1) Amortized
+Remove First = O(1)
+Remove Last  = O(1)
+Space        = O(n)
+
+
+Java LinkedList:
+Access       = O(n)
+Search       = O(n)
+Add First    = O(1)
+Add Last     = O(1)
+Remove First = O(1)
+Remove Last  = O(1)
+Space        = O(n)
