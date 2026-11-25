@@ -1,0 +1,113 @@
+
+TIME COMPLEXITY - COLLECTIONS
+
+========================================
+1. PYTHON
+========================================
+
+Python List
+----------------------------------------
+Access Index       O(1)
+Search             O(n)
+Add First          O(n)
+Add Last           O(1) Amortized
+Remove First       O(n)
+Remove Last        O(1)
+Insert Middle      O(n)
+Remove Middle      O(n)
+
+
+Python Deque
+----------------------------------------
+Access Index       O(n)
+Search             O(n)
+Add First          O(1)
+Add Last           O(1)
+Remove First       O(1)
+Remove Last        O(1)
+Insert Middle      O(n)
+Remove Middle      O(n)
+
+
+========================================
+2. JAVA
+========================================
+
+Java ArrayList
+----------------------------------------
+Access Index       O(1)
+Search             O(n)
+Add First          O(n)
+Add Last           O(1) Amortized
+Remove First       O(n)
+Remove Last        O(1)
+Insert Middle      O(n)
+Remove Middle      O(n)
+
+
+Java LinkedList
+----------------------------------------
+Access Index       O(n)
+Search             O(n)
+Add First          O(1)
+Add Last           O(1)
+Remove First       O(1)
+Remove Last        O(1)
+Insert Middle      O(n)
+Remove Middle      O(n)
+
+
+========================================
+3. KOTLIN
+========================================
+
+Kotlin MutableList (ArrayList)
+----------------------------------------
+Access Index       O(1)
+Search             O(n)
+Add First          O(n)
+Add Last           O(1) Amortized
+Remove First       O(n)
+Remove Last        O(1)
+Insert Middle      O(n)
+Remove Middle      O(n)
+
+
+Kotlin ArrayDeque
+----------------------------------------
+Access Index       O(1)
+Search             O(n)
+Add First          O(1) Amortized
+Add Last           O(1) Amortized
+Remove First       O(1) Amortized
+Remove Last        O(1) Amortized
+Insert Middle      O(n)
+Remove Middle      O(n)
+
+
+Kotlin LinkedList
+(Java LinkedList on JVM)
+----------------------------------------
+Access Index       O(n)
+Search             O(n)
+Add First          O(1)
+Add Last           O(1)
+Remove First       O(1)
+Remove Last        O(1)
+Insert Middle      O(n)
+Remove Middle      O(n)
+
+
+========================================
+NOTES
+========================================
+
+O(1) = Constant Time
+O(n) = Linear Time
+
+Amortized O(1) = Average cost over
+many operations, despite occasional
+expensive resizing.
+
+n = Number of elements
+========================================
