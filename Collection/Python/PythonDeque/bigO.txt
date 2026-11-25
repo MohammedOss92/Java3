@@ -1,0 +1,139 @@
+
+# =====================================
+# Python List - Big O
+# =====================================
+
+nums = [10, 20, 30, 40]
+
+# Access
+nums[0]                 # O(1)
+
+# Update
+nums[0] = 50            # O(1)
+
+# Add at end
+nums.append(50)         # O(1) Amortized
+
+# Add at beginning
+nums.insert(0, 5)       # O(n)
+
+# Add at specific index
+nums.insert(2, 15)      # O(n)
+
+# Remove last element
+nums.pop()              # O(1)
+
+# Remove first element
+nums.pop(0)             # O(n)
+
+# Remove by value
+nums.remove(20)         # O(n)
+
+# Search
+20 in nums              # O(n)
+
+# Length
+len(nums)               # O(1)
+
+# Sort
+nums.sort()             # O(n log n)
+
+# Reverse
+nums.reverse()          # O(n)
+
+# Copy
+copy_nums = nums.copy() # O(n)
+
+# Loop
+for num in nums:        # O(n)
+    print(num)
+
+
+# =====================================
+# Python Deque - Big O
+# =====================================
+
+from collections import deque
+
+nums = deque([10, 20, 30, 40])
+
+# Add at end
+nums.append(50)         # O(1)
+
+# Add at beginning
+nums.appendleft(5)      # O(1)
+
+# Remove last element
+nums.pop()              # O(1)
+
+# Remove first element
+nums.popleft()          # O(1)
+
+# Access first element
+nums[0]                 # O(1)
+
+# Access last element
+nums[-1]                # O(1)
+
+# Access middle element
+nums[2]                 # O(n)
+
+# Search
+20 in nums              # O(n)
+
+# Length
+len(nums)               # O(1)
+
+# Add multiple elements at end
+nums.extend([50, 60])   # O(k)
+
+# Add multiple elements at beginning
+nums.extendleft([1, 2]) # O(k)
+
+# Reverse
+nums.reverse()          # O(n)
+
+# Rotate
+nums.rotate(1)          # O(k) where k is the
+                        # number of moved elements
+
+# Copy
+copy_nums = nums.copy() # O(n)
+
+# Loop
+for num in nums:        # O(n)
+    print(num)
+
+
+# =====================================
+# Time Complexity Summary
+# =====================================
+
+# LIST
+# Access             O(1)
+# Update             O(1)
+# Append             O(1) Amortized
+# Insert beginning   O(n)
+# Insert middle      O(n)
+# Pop end            O(1)
+# Pop beginning      O(n)
+# Search             O(n)
+# Sort               O(n log n)
+# Reverse            O(n)
+# Copy               O(n)
+# Loop               O(n)
+
+
+# DEQUE
+# Access first       O(1)
+# Access last        O(1)
+# Access middle      O(n)
+# Append             O(1)
+# Appendleft         O(1)
+# Pop                O(1)
+# Popleft            O(1)
+# Search             O(n)
+# Extend             O(k)
+# Reverse            O(n)
+# Copy               O(n)
+# Loop               O(n)
