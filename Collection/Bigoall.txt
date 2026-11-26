@@ -1,0 +1,207 @@
+ممتاز. الآن فهمت هدفك الحقيقي: أنت لا تريد حفظ `ArrayList` و`LinkedList` و`HashMap` كل واحد على حدة. تريد أن تصبح قادراً على اتخاذ قرار في مشروع حقيقي:
+
+وصلني 100 طلب مطعم، ثم 50 طلباً جديداً. الزبائن يعدّلون طلباتهم، يلغونها، يضيفون وجبات، ويطلبون البحث عن طلب بواسطة رقم الطلب ID أو موقعه Index. أي هيكل بيانات أستخدم؟ ولماذا؟
+
+هذا هو التفكير الصحيح في هياكل البيانات.
+
+سنأخذ مشروع إدارة طلبات مطعم، ونبني عليه مقارنة عملية بين Java وKotlin وPython، مع فهم Time Complexity وSpace Complexity.
+
+### 1\. أولاً: ما العمليات التي نحتاجها؟
+
+| العملية          | مثال                      |
+| ---------------- | ------------------------- |
+| العرض            | عرض جميع الطلبات          |
+| البحث بالـ Index | الطلب الموجود في الموقع 5 |
+| البحث بالـ ID    | الطلب رقم 1050            |
+| الإضافة          | وصول طلب جديد             |
+| الحذف بالـ Index | حذف الطلب في الموقع 3     |
+| الحذف بالـ ID    | إلغاء الطلب 1050          |
+| التعديل          | تغيير وجبة أو سعر أو كمية |
+| الترتيب          | ترتيب الطلبات حسب السعر   |
+| منع التكرار      | عدم تكرار رقم الطلب       |
+| الأولوية         | الطلبات المستعجلة أولاً   |
+| FIFO             | أقدم طلب يُعالج أولاً     |
+
+مهم جداً: لا يوجد هيكل واحد هو الأفضل لكل هذه العمليات.
+
+### 2\. مقارنة الهياكل حسب كل عملية
+
+هذه أهم مقارنة يجب أن تفهمها، وليست للحفظ.
+
+Time Complexity – متوسط الأداء، باستثناء الحالات التي نوضحها
+
+| الهيكل        | عرض الكل | بحث Index | بحث ID / Value | إضافة    | حذف         |
+| ------------- | -------- | --------- | -------------- | -------- | ----------- |
+| ArrayList     | O(n)     | O(1)      | O(n)           | O(1)*    | O(n)        |
+| LinkedList    | O(n)     | O(n)      | O(n)           | O(1)**   | O(n)        |
+| HashMap       | O(n)     | —         | O(1)           | O(1)     | O(1)        |
+| LinkedHashMap | O(n)     | —         | O(1)           | O(1)     | O(1)        |
+| TreeMap       | O(n)     | —         | O(log n)       | O(log n) | O(log n)    |
+| HashSet       | O(n)     | —         | O(1)           | O(1)     | O(1)        |
+| TreeSet       | O(n)     | —         | O(log n)       | O(log n) | O(log n)    |
+| ArrayDeque    | O(n)     | —         | O(n)           | O(1)*    | O(1)*       |
+| PriorityQueue | O(n)     | —         | O(n)           | O(log n) | O(log n)*** |
+
+* `O(1)*` في ArrayList تعني الإضافة في النهاية بالمتوسط، وليس في أي موقع.
+
+* `O(1)**` في LinkedList تعني الإضافة والحذف عند الطرف أو عندما يكون موقع العقدة معروفاً.
+
+* `O(log n)***` في PriorityQueue تعني حذف العنصر ذي الأولوية، وليس حذف أي عنصر تختاره.
+
+### 3\. متى أستخدم كل هيكل في المطعم؟
+
+![Using the Java library Chapter — 6 | by Sachintha Punchihewa | Medium](https://images.openai.com/static-rsc-4/EZASX14LwQMfEx0NmifdVZ_min7redI86Kv-CVacMhyzxiA1BghUwqc0Wn4LoyLCzK6bqXp1yHH2ynfeS9KeY5l6SfrYQFcZmmOMkN406Hqtx-HFXZJfOLO6kJfTPoS7prAFRMKvUYoqYMKLCTbJCZ6lYAo6Qc7SnT9f_z6yjb6f7I4th2V_3l01pDIOGSvC?purpose=fullsize)
+
+1\. ArrayList
+
+عندما تحتاج:
+
+* عرض الطلبات.
+
+* الوصول بواسطة Index.
+
+* تعديل عناصر كثيرة.
+
+* إضافة طلبات في النهاية.
+
+مناسب لقائمة الطلبات
+
+![Doubly Linked List Doubly Linked List Doubly Linked](https://images.openai.com/static-rsc-4/rwHI5vaZupCQsPGj-GAQZdLb6z6FkULcbsf0c_-KIaUuDk1FEe2cpxDZF1eDDFhUhm6wYR57QiG5thEK-OnjAk4jIMHev3PVABkGjjTL7EtL0bTvjByuxqOSALlkT4a37kDRCOG92c4ngfoT7crQ1AU5qVsOuvnCezo4NFKBZWBALllD4KiaqogAi-K8qn47?purpose=fullsize)
+
+2\. LinkedList
+
+عندما تحتاج:
+
+* إضافة وحذف متكرر من البداية والنهاية.
+
+* العمل كـ Queue أو Deque.
+
+ليس الأفضل للبحث عن طلب بواسطة ID.
+
+![HashMap in java - e2eHiring](https://images.openai.com/static-rsc-4/OvRVv-G9lb5fcFvRW-1LWB5HIP70fkQLRyLKowMwKazKqMspN9oXomaFySBjAtg6ac0Xyu0pc0LTTdlSk4k7Q4m5LLt0GGxxX1cZVOrvnzFjErm1LE97BI9r2WOzRbIXz6H-ADJLgRidtUC9XFpRR9U5iFe0v2Ww6s_HFFsWO2Y6oz9-vLTTUqAvxFMLKDfE?purpose=fullsize)
+
+3\. HashMap
+
+عندما تحتاج:
+
+* البحث عن طلب باستخدام ID.
+
+* تعديل طلب معين بسرعة.
+
+* حذف طلب بواسطة ID.
+
+ممتاز للبحث بالرقم
+
+![HashSet contains() Method in Java](https://images.openai.com/static-rsc-4/vEhuYD6SnolDJT6laVzQivO3TcS7hJ9uWKOrVjld7S-XPUo7BUvH6lPtSuAry3wlCzHFJyudas93yyylinAe1gbyLy0S2Da7oeV8SthiAGB9dt1MiPGjn_De9FagkgJHWnz-RHKUajl706KpHhIMfdijizkInxJ9XXIeYHWcDFrmOxKB3hRhfXEWBNsRwgcw?purpose=fullsize)
+
+4\. HashSet
+
+عندما تحتاج:
+
+* منع تكرار أرقام الطلبات.
+
+* معرفة هل رقم معين موجود أم لا.
+
+![Heaps & Priority Queues. The heart of Graph Algorithms. | by Aditya Agrawal | Programming Club, NIT Raipur | Medium](https://images.openai.com/static-rsc-4/UMsnL6LsPCcPtcqS58ohfchJXqNHMWK5h6OjKit1TufrTwYCe7IvJW0HhO-whMBEioqxfKR5jev7OSIey8-wMTlOvt-1CjI5gsReCHuApXjdNMBr1dHDOnONw-5HARIYN8Wzp3eXYBVzBZMMTsTYNoSdZVKMgin0jZmokQBQQD9UZcP9bz9ndv_j3S7NqXkF?purpose=fullsize)
+
+5\. PriorityQueue
+
+عندما تحتاج:
+
+* معالجة الطلبات حسب الأولوية.
+
+* الطلب المستعجل قبل الطلب العادي.
+
+![Java Redefined: Java Collections : Internal Working](https://images.openai.com/static-rsc-4/tACLmaWcYmLPeedm6fIPkEjl3s958T33a1GLXDsA76RdckmWES92lwe2jbdcnQIDRip-1bPA_9gWpcIpFKy0b0cOiVfoS4Z6DDSNYcDjksWo4AVTYhTnL3sFzDMiykmzUaA-W9hXGPUvVjK8ZtBOjMSPf8RlWNOKT9ojdJ9g3FCpFlh_95xG26F3hphmttFX?purpose=fullsize)
+
+6\. TreeMap / TreeSet
+
+عندما تحتاج:
+
+* ترتيب الطلبات حسب ID.
+
+* البحث عن نطاق من الأرقام.
+
+* الاحتفاظ بالعناصر مرتبة.
+
+### 4\. الحل العملي: استخدام أكثر من هيكل معاً
+
+في مشروع مطعم حقيقي، يمكن أن نستخدم:
+
+### Order Management System
+
+\*\*ArrayList
+
+HashMap
+
+الوصول إلى الطلب مباشرة بواسطة ID
+
+Order Object
+
+ID + Customer + Meals + Quantity + Price + Status
+
+مثلاً:
+
+* `ArrayList` يعرض الطلبات بالترتيب.
+
+* `HashMap` يبحث عن الطلب رقم 1050.
+
+* كلاهما يشيران إلى كائن الطلب نفسه.
+
+* عندما تعدّل بيانات الطلب، تظهر البيانات المعدلة عند استخدام أي منهما.
+
+ملاحظة: يجب تحديث الهيكلين معاً عند الإضافة والحذف، حتى لا تصبح البيانات غير متطابقة. كذلك الـ Index ليس هو ID؛ الـ Index يتغير عند الحذف، أما ID فيبقى ثابتاً.
+
+### 5\. خطتنا التعليمية
+
+لن ندرس كل شيء دفعة واحدة. سنبني مشروعاً تدريجياً:
+
+* المرحلة الأولى: ArrayList
+
+    إضافة، عرض، بحث بالـ Index، حذف، تعديل.
+
+* المرحلة الثانية: HashMap
+
+    بحث وتعديل وحذف باستخدام ID.
+
+* المرحلة الثالثة: ArrayList + HashMap
+
+    الجمع بين الهيكلين في نظام طلبات واحد.
+
+* المرحلة الرابعة: LinkedList وDeque وQueue
+
+    الطلبات التي تدخل وتخرج، ومعالجة الطوابير.
+
+* المرحلة الخامسة: HashSet وTreeSet وTreeMap
+
+    منع التكرار والترتيب.
+
+* المرحلة السادسة: PriorityQueue
+
+    الطلبات المستعجلة والأولويات.
+
+* المرحلة السابعة: مشروع متكامل
+
+    إدارة طلبات الزبائن وتعديلها وإلغاؤها والبحث عنها.
+
+وسنقارن كل مجموعة بين Java وKotlin وPython، مع Time وSpace Complexity.
+
+### 6\. نبدأ بسؤال من واقع المشروع
+
+وصلتك 1000 طلب، وأحد الزبائن اتصل وقال:
+
+«أريد تعديل طلبي رقم 1050، أريد تغيير البيتزا إلى برغر».
+
+أي عملية أهم في هذه الحالة؟
+
+ArrayList والبحث عن الطلب بالمرور على جميع العناصر.
+
+HashMap والبحث عن الطلب بواسطة ID.
+
+Deque وإزالة الطلب من البداية.
+
+TreeSet والبحث عن الطلب بواسطة Index.
+
+تحقق من إجابتي
+
+هدفنا ليس أن تعرف أسماء الهياكل فقط، بل أن تستطيع اختيار الهيكل المناسب بنفسك عندما تبني تطبيق Android أو Backend باستخدام Django.
